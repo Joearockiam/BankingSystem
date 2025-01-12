@@ -7,4 +7,6 @@ BankingSystem
 
 ## Modules
 - UI - Console based UI  
-- Scheduler - for EoD balance and EoM interest calculation. 
+- Scheduler
+  - EoD Balance and interest
+  - EoM End of Month interest calculation for each account
