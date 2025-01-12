@@ -6,5 +6,5 @@ BankingSystem
 - PostgreSQL 16.x
 
 ## Modules
-UI - Console base UI  
-Scheduler
+- UI - Console base UI  
+- Scheduler - for EoD balance and EoM interest calculation. 
