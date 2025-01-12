@@ -6,3 +6,5 @@ BankingSystem
 - PostgreSQL 16.x
 
 ## Modules
+UI - Console base UI
+Scheduler
