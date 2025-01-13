@@ -33,6 +33,11 @@ public class Scheduler {
 	@Autowired
 	private EomInterestService eomService;
 	
+	/**
+	 * This scheduler task is to compute the end of day balance and the interest 
+	 * on that day using the latest rule and update the 
+	 * eod_balance table.
+	 */
 	@Scheduled(cron = "#{@eodCronExpression}")
 	public void runEodTask() {
 		logger.info("Eod Task executed at : " + LocalDateTime.now());
@@ -49,6 +54,13 @@ public class Scheduler {
 		}
 	}
 	
+	/**
+	 * This scheduler task is to perform the end of month interest rate 
+	 * calculation and update the following table: 
+	 * 1. account transaction table with transaction type 'I'
+	 * 2. account table with the latest balance
+	 * 3. update the eod balance table and update the balance of the last day of month.
+	 */
 	@Scheduled(cron = "#{@eomCronExpression}")
 	public void runEomTask() {
 		if (!isLastDayOfMonth())
